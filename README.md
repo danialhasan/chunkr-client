@@ -110,7 +110,7 @@ const result = await runChunkrDocumentFlow(documentUrl, fileName, {
 
 ## API Documentation
 
-For detailed API documentation, please refer to the official [Chunkr API Documentation](https://docs.chunkr.ai).
+For detailed API documentation, please refer to the official [Chunkr API Documentation](https://docs.chunkr.ai/api-references).
 
 ## License
 
