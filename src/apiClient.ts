@@ -10,8 +10,9 @@ dotenv.config();
 
 // Validate required environment variables
 const CHUNKR_API_KEY = process.env.CHUNKR_API_KEY;
-const CHUNKR_API_URL =
-  process.env.CHUNKR_API_URL || "https://api.chunkr.ai/api/v1";
+
+// Set API URL internally - not reading from environment variables
+const DEFAULT_CHUNKR_API_URL = "https://api.chunkr.ai/api/v1";
 
 if (!CHUNKR_API_KEY) {
   console.warn(
@@ -22,10 +23,12 @@ if (!CHUNKR_API_KEY) {
 /**
  * Creates and returns an Axios instance configured for Chunkr API
  * Uses bearer authentication with the CHUNKR_API_KEY
+ * 
+ * @param apiUrl Optional custom API URL, otherwise defaults to https://api.chunkr.ai/api/v1
  */
-export const createChunkrApiClient = (): AxiosInstance => {
+export const createChunkrApiClient = (apiUrl?: string): AxiosInstance => {
   const instance = axios.create({
-    baseURL: CHUNKR_API_URL,
+    baseURL: apiUrl || DEFAULT_CHUNKR_API_URL,
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${CHUNKR_API_KEY}`,

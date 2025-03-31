@@ -16,7 +16,7 @@ import {
   updateTask,
   checkHealth,
 } from "./taskManagement";
-import { chunkrApiClient } from "./apiClient";
+import { chunkrApiClient, createChunkrApiClient } from "./apiClient";
 import {
   ChunkrConfiguration,
   ChunkrCreateTaskInput,
@@ -32,6 +32,7 @@ import {
 export {
   // API client
   chunkrApiClient,
+  createChunkrApiClient,
 
   // Task creation
   createTask,

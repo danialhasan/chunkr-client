@@ -24,8 +24,9 @@ Add your Chunkr API key to the `.env` file:
 
 ```env
 CHUNKR_API_KEY=sk-xxxxxxxxxxxx
-CHUNKR_API_URL=https://api.chunkr.ai/api/v1
 ```
+
+The API URL is set internally to `https://api.chunkr.ai/api/v1` by default.
 
 ## Usage Examples
 
@@ -80,6 +81,15 @@ const processBase64Document = async (
     throw error;
   }
 };
+```
+
+### Custom API URL
+
+```typescript
+import { createChunkrApiClient } from '@legalflow/chunkr-client';
+
+// Create a client with a custom API URL
+const customClient = createChunkrApiClient('https://custom-chunkr-api.example.com/v1');
 ```
 
 ### Advanced Configuration

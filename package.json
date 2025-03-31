@@ -2,6 +2,10 @@
   "name": "@legalflow/chunkr-client",
   "version": "1.0.0",
   "description": "A client library for the Chunkr.ai document processing API",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
